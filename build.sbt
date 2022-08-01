@@ -1,11 +1,16 @@
 enablePlugins(ScalaJSBundlerPlugin)
 
+val reactVersion = "17.0.2"
 name := "mui"
 
 scalaVersion := "2.13.6"
 
-Compile / npmDependencies += "react" -> "16.13.1"
-Compile / npmDependencies += "react-dom" -> "16.13.1"
+Compile / npmDependencies += "react" -> reactVersion
+Compile / npmDependencies += "react-dom" -> reactVersion
+Compile / npmDependencies += "@mui/base" -> "5.0.0-alpha.62"
+Compile / npmDependencies += "@mui/system" -> "5.2.6"
+Compile / npmDependencies += "@mui/private-theming" -> "5.2.3"
+Compile / npmDependencies += "@mui/styled-engine" -> "5.2.6"
 Compile / npmDependencies += "react-proxy" -> "1.1.8"
 
 Compile / npmDevDependencies += "file-loader" -> "6.2.0"
@@ -17,6 +22,7 @@ Compile / npmDevDependencies += "webpack-merge" -> "5.8.0"
 
 libraryDependencies += "me.shadaj" %%% "slinky-web" % "0.6.7"
 libraryDependencies += "me.shadaj" %%% "slinky-hot" % "0.6.7"
+libraryDependencies += "com.olvind.st-material-ui" %%% "st-material-ui-slinky" % "0.1"
 
 libraryDependencies += "org.scalatest" %%% "scalatest" % "3.2.9" % Test
 
@@ -27,9 +33,15 @@ startWebpackDevServer / version := "3.11.2"
 
 webpackResources := baseDirectory.value / "webpack" * "*"
 
-fastOptJS / webpackConfigFile := Some(baseDirectory.value / "webpack" / "webpack-fastopt.config.js")
-fullOptJS / webpackConfigFile := Some(baseDirectory.value / "webpack" / "webpack-opt.config.js")
-Test / webpackConfigFile := Some(baseDirectory.value / "webpack" / "webpack-core.config.js")
+fastOptJS / webpackConfigFile := Some(
+  baseDirectory.value / "webpack" / "webpack-fastopt.config.js"
+)
+fullOptJS / webpackConfigFile := Some(
+  baseDirectory.value / "webpack" / "webpack-opt.config.js"
+)
+Test / webpackConfigFile := Some(
+  baseDirectory.value / "webpack" / "webpack-core.config.js"
+)
 
 fastOptJS / webpackDevServerExtraArgs := Seq("--inline", "--hot")
 fastOptJS / webpackBundlingMode := BundlingMode.LibraryOnly()
