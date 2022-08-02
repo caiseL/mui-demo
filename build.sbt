@@ -7,10 +7,6 @@ scalaVersion := "2.13.6"
 
 Compile / npmDependencies += "react" -> reactVersion
 Compile / npmDependencies += "react-dom" -> reactVersion
-Compile / npmDependencies += "@mui/base" -> "5.0.0-alpha.62"
-Compile / npmDependencies += "@mui/system" -> "5.2.6"
-Compile / npmDependencies += "@mui/private-theming" -> "5.2.3"
-Compile / npmDependencies += "@mui/styled-engine" -> "5.2.6"
 Compile / npmDependencies += "react-proxy" -> "1.1.8"
 
 Compile / npmDevDependencies += "file-loader" -> "6.2.0"
@@ -22,7 +18,7 @@ Compile / npmDevDependencies += "webpack-merge" -> "5.8.0"
 
 libraryDependencies += "me.shadaj" %%% "slinky-web" % "0.6.7"
 libraryDependencies += "me.shadaj" %%% "slinky-hot" % "0.6.7"
-libraryDependencies += "com.olvind.st-material-ui" %%% "st-material-ui-slinky" % "0.1"
+libraryDependencies += "com.olvind" %%% "st-material-ui-slinky" % "0.1"
 
 libraryDependencies += "org.scalatest" %%% "scalatest" % "3.2.9" % Test
 
