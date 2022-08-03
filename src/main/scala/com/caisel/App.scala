@@ -2,7 +2,7 @@ package com.caisel
 
 import com.caisel.components.{AppBar, TextField}
 import com.caisel.widgets.{DialogExample, DrawerExample, SnackbarExample}
-import com.olvind.mui.csstype.mod.Property.FlexDirection
+import com.olvind.mui.csstype.mod.Property.{FlexDirection, TextAlign}
 import com.olvind.mui.muiMaterial.{
   components => mui,
   muiMaterialStrings => muiStrings
@@ -29,6 +29,7 @@ import slinky.core.facade.Fragment
       .setJustifyContent("center")
       .setPadding("30px 0")
       .setMargin("0 auto")
+      .setTextAlign(TextAlign.center)
 
   private def bodyStyle = CSSProperties()
     .setPadding("1em")
