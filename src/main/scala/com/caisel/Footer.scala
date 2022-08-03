@@ -27,7 +27,10 @@ import slinky.core.annotations.react
         )
       )
       .style(
-        CSSProperties().setDisplay("flex").setFlexDirection(FlexDirection.row)
+        CSSProperties()
+          .setDisplay("flex")
+          .setFlexDirection(FlexDirection.row)
+          .setMargin("10px")
       )
 
     mui
